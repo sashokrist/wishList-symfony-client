@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wish List{% endblock %}
+
+{% block body %}
+    <h1>Wish List</h1>
+    {% if wishLists is not empty %}
+        <ul>
+            {% for wishList in wishLists %}
+                <li>{{ wishList.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No wish lists found.</p>
+    {% endif %}
+{% endblock %}

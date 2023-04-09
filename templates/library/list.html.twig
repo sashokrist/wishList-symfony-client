@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Libraries{% endblock %}
+
+{% block body %}
+    <h1>Libraries</h1>
+
+    {% if libraries is empty %}
+        <p>No libraries found.</p>
+    {% else %}
+        <ul>
+            {% for library in libraries %}
+                <li>{{ library.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="{{ path('library_new') }}">Add new library</a>
+{% endblock %}
